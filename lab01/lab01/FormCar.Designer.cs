@@ -34,6 +34,7 @@
             this.left_btn = new System.Windows.Forms.Button();
             this.right_btn = new System.Windows.Forms.Button();
             this.pictureBoxCar = new System.Windows.Forms.PictureBox();
+            this.GruzCreate_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,18 +92,29 @@
             this.pictureBoxCar.TabIndex = 5;
             this.pictureBoxCar.TabStop = false;
             // 
-            // Form1
+            // GruzCreate_Button
+            // 
+            this.GruzCreate_Button.Location = new System.Drawing.Point(152, 21);
+            this.GruzCreate_Button.Name = "GruzCreate_Button";
+            this.GruzCreate_Button.Size = new System.Drawing.Size(97, 30);
+            this.GruzCreate_Button.TabIndex = 6;
+            this.GruzCreate_Button.Text = "Создать";
+            this.GruzCreate_Button.UseVisualStyleBackColor = true;
+            this.GruzCreate_Button.Click += new System.EventHandler(this.GruzCreate_Button_Click);
+            // 
+            // FormCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.GruzCreate_Button);
             this.Controls.Add(this.right_btn);
             this.Controls.Add(this.left_btn);
             this.Controls.Add(this.down_btn);
             this.Controls.Add(this.up_btn);
             this.Controls.Add(this.create_button);
             this.Controls.Add(this.pictureBoxCar);
-            this.Name = "Form1";
+            this.Name = "FormCar";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).EndInit();
             this.ResumeLayout(false);
@@ -117,6 +129,7 @@
         private System.Windows.Forms.Button left_btn;
         private System.Windows.Forms.Button right_btn;
         private System.Windows.Forms.PictureBox pictureBoxCar;
+        private System.Windows.Forms.Button GruzCreate_Button;
     }
 }
 

@@ -7,51 +7,28 @@ using System.Threading.Tasks;
 
 namespace lab01
 {
-    class SamosvalCar
+   public class SamosvalCar : Vehicle
     {
-        protected float _startPosX;
-
-        protected float _startPosY;
-
-        protected int _pictureWidth;
-
-        protected int _pictureHeight;
 
         private const int carWidth = 140;
 
         private const int carHeight = 25;
-
-        public int MaxSpeed { protected set; get; }
-
-        public float Weight { protected set; get; }
-
-        public Color MainColor { protected set; get; }
+        
         public Color DopColor { private set; get; }
         public bool Toner { private set; get; }
         public Color WhellColor { private set; get; }
         public double Kuzovsize { private set; get; }
         public bool Line { private set; get; }
 
-        public SamosvalCar(int maxSpeed, float weight, Color mainColor, Color dopColor, bool
-       toner, double kuzovsize, bool line)
+        public SamosvalCar(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
-            DopColor = dopColor;
-            Toner = toner;
-            Kuzovsize = kuzovsize;
-            Line = line;
+            MainColor = mainColor;
         }
 
-        public void SetPosition(int x, int y, int width, int height)
-        {
-            _startPosX = x;
-            _startPosY = y;
-            _pictureWidth = width;
-            _pictureHeight = height;
-        }
-
-        public void MoveTransport(Direction direction)
+        
+        public override void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
@@ -87,7 +64,7 @@ namespace lab01
             }
         }
 
-        public void DrawCar(Graphics g)
+        public override void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
             Pen bpen = new Pen(Color.Black);
@@ -111,5 +88,6 @@ namespace lab01
             g.DrawRectangle(pen, _startPosX + 55, _startPosY, 15, 15);
             g.FillRectangle(white, _startPosX + 55, _startPosY, 15, 15);
         }
+        
     }
 }

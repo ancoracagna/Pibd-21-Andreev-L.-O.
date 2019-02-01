@@ -12,7 +12,7 @@ namespace lab01
 {
     public partial class FormCar : Form
     {
-        private SamosvalCar samosval;
+        private ITransport samosval;
         public FormCar()
         {
             InitializeComponent();
@@ -28,8 +28,7 @@ namespace lab01
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            samosval = new SamosvalCar(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.LightGreen,
-            Color.Yellow, false, 1, true);
+            samosval = new SamosvalCar(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.LightGreen);
             samosval.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxCar.Width,
             pictureBoxCar.Height);
             Draw();
@@ -52,6 +51,15 @@ namespace lab01
                     samosval.MoveTransport(Direction.Right);
                     break;
             }
+            Draw();
+        }
+
+        private void GruzCreate_Button_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            samosval = new GruzCar(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.LightGreen, Color.Black, true, 1, true);
+            samosval.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxCar.Width,
+            pictureBoxCar.Height);
             Draw();
         }
     }
