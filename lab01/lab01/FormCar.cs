@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace lab01
 {
-    public partial class Form1 : Form
+    public partial class FormCar : Form
     {
         private SamosvalCar samosval;
-        public Form1()
+        public FormCar()
         {
             InitializeComponent();
         }
