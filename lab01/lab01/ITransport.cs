@@ -14,5 +14,6 @@ namespace lab01
         void MoveTransport(Direction direction);
 
         void DrawCar(Graphics g);
+        void SetMainColor(Color color);
     }
 }

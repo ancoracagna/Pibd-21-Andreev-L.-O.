@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace lab01
 {
-    static class Program
+    public delegate void carDelegate(ITransport car);    static class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.

@@ -36,7 +36,6 @@
             this.TakeCar_Button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.CreateGruz_Button = new System.Windows.Forms.Button();
             this.CreateSamosval_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -59,7 +58,6 @@
             this.groupBox1.Controls.Add(this.TakeCar_Button);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.CreateGruz_Button);
             this.groupBox1.Controls.Add(this.CreateSamosval_Button);
             this.groupBox1.Location = new System.Drawing.Point(759, 12);
             this.groupBox1.Name = "groupBox1";
@@ -121,25 +119,15 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Забрать машину";
             // 
-            // CreateGruz_Button
-            // 
-            this.CreateGruz_Button.Location = new System.Drawing.Point(23, 226);
-            this.CreateGruz_Button.Name = "CreateGruz_Button";
-            this.CreateGruz_Button.Size = new System.Drawing.Size(194, 49);
-            this.CreateGruz_Button.TabIndex = 1;
-            this.CreateGruz_Button.Text = "Припарковать грузовик";
-            this.CreateGruz_Button.UseVisualStyleBackColor = true;
-            this.CreateGruz_Button.Click += new System.EventHandler(this.CreateGruz_Button_Click);
-            // 
             // CreateSamosval_Button
             // 
             this.CreateSamosval_Button.Location = new System.Drawing.Point(23, 171);
             this.CreateSamosval_Button.Name = "CreateSamosval_Button";
             this.CreateSamosval_Button.Size = new System.Drawing.Size(194, 49);
             this.CreateSamosval_Button.TabIndex = 0;
-            this.CreateSamosval_Button.Text = "Припарковать самосвал";
+            this.CreateSamosval_Button.Text = "Добавить автомобиль";
             this.CreateSamosval_Button.UseVisualStyleBackColor = true;
-            this.CreateSamosval_Button.Click += new System.EventHandler(this.CreateSamosval_Button_Click);
+            this.CreateSamosval_Button.Click += new System.EventHandler(this.buttonSetCar_Click);
             // 
             // FormParking
             // 
@@ -168,7 +156,6 @@
         private System.Windows.Forms.Button TakeCar_Button;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button CreateGruz_Button;
         private System.Windows.Forms.Button CreateSamosval_Button;
         private System.Windows.Forms.ListBox listBoxLevels;
     }

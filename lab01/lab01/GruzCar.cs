@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace lab01
 {
-   public class GruzCar : SamosvalCar
+    public class GruzCar : SamosvalCar
     {
         public Color DopColor { private set; get; }
         public bool Toner { private set; get; }
@@ -51,5 +51,9 @@ namespace lab01
                 g.FillRectangle(brush, _startPosX + 80, _startPosY - 6, 80 * (int)Kuzovsize, 40);
             }
         }
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
+        }
     }
-    }
+}
