@@ -23,6 +23,20 @@ namespace lab01
             Kuzovsize = kuzovsize;
             Line = line;
         }
+        public GruzCar(string info) : base(info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 8)
+            {
+            MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+                Toner = Convert.ToBoolean(strs[4]);
+                Kuzovsize = Convert.ToInt32(strs[5]);
+                Line = Convert.ToBoolean(strs[6]);
+            }
+        }
         public override void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
@@ -55,5 +69,10 @@ namespace lab01
         {
             DopColor = color;
         }
+        public override string ToString()
+        {
+            return base.ToString() + ";" + DopColor.Name + ";" + FrontSpoiler + ";" +
+           SideSpoiler + ";" + BackSpoiler + ";" + CountLines;
+        }
     }
 }
