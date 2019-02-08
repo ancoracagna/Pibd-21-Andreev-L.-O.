@@ -64,9 +64,11 @@ namespace lab01
                     WriteToFile("Level" + Environment.NewLine, fs);
                     for (int i = 0; i < countPlaces; i++)
                     {
-                        var car = level[i];
-                        if (car != null)
+                        try
                         {
+                            var car = level[i];
+                            if (car != null)
+                             {
                             //если место не пустое
                             //Записываем тип мшаины
                             if (car.GetType().Name == "SamosvalCar")
@@ -79,7 +81,9 @@ namespace lab01
                             }
                             //Записываемые параметры
                             WriteToFile(car + Environment.NewLine, fs);
+                             }
                         }
+                        finally { }
                     }
                 }
             }
@@ -95,7 +99,7 @@ namespace lab01
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             string bufferTextFromFile = "";
             using (FileStream fs = new FileStream(filename, FileMode.Open))
