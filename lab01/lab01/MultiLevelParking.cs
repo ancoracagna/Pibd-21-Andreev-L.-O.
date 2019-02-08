@@ -62,28 +62,19 @@ namespace lab01
                 {
                     //Начинаем уровень
                     WriteToFile("Level" + Environment.NewLine, fs);
-                    for (int i = 0; i < countPlaces; i++)
+                    foreach (ITransport car in level)
                     {
-                        try
+                        //Записываем тип мшаины
+                        if (car.GetType().Name == "SamosvalCar")
                         {
-                            var car = level[i];
-                            if (car != null)
-                             {
-                            //если место не пустое
-                            //Записываем тип мшаины
-                            if (car.GetType().Name == "SamosvalCar")
-                            {
-                                WriteToFile(i + ":SamosvalCar:", fs);
-                            }
-                            if (car.GetType().Name == "GruzCar")
-                            {
-                                WriteToFile(i + ":GruzCar:", fs);
-                            }
-                            //Записываемые параметры
-                            WriteToFile(car + Environment.NewLine, fs);
-                             }
+                            WriteToFile(level.GetKey + ":SamosvalCar:", fs);
                         }
-                        finally { }
+                        if (car.GetType().Name == "GruzCar")
+                        {
+                            WriteToFile(level.GetKey + ":GruzCar:", fs);
+                        }
+                        //Записываемые параметры
+                        WriteToFile(car + Environment.NewLine, fs);
                     }
                 }
             }
@@ -156,6 +147,10 @@ namespace lab01
                 parkingStages[counter][Convert.ToInt32(strs[i].Split(':')[0])] = car;
             }
             return true;
+        }
+        public void Sort()
+        {
+            parkingStages.Sort();
         }
     }
 }
