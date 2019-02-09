@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -59,7 +60,7 @@ namespace lab01
                 p._places.Remove(index);
                 return car;
             }
-            return null;
+            throw new ParkingNotFoundException(index);
         }
         private bool CheckFreePlace(int index)
         {
@@ -98,7 +99,7 @@ namespace lab01
                 {
                     return _places[ind];
                 }
-                return null;
+                throw new ParkingNotFoundException(ind);
             }
             set
             {
@@ -107,6 +108,10 @@ namespace lab01
                     _places.Add(ind, value);
                     _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5 *
                    _placeSizeHeight + 15, PictureWidth, PictureHeight);
+                }
+                else
+                {
+                    throw new ParkingOccupiedPlaceException(ind);
                 }
             }
         }
