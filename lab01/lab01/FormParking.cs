@@ -15,10 +15,12 @@ namespace lab01
     {
         MultiLevelParking parking;
 
-        FormCarConfig form;
+        FormCarConfig form;
+
         private Logger logger;
 
-        private const int countLevel = 5;
+        private const int countLevel = 5;
+
         private GruzCar samosval;
         public FormParking()
         {
@@ -30,7 +32,8 @@ namespace lab01
             {
                 listBoxLevels.Items.Add("Уровень " + (i + 1));
             }
-            listBoxLevels.SelectedIndex = 0;
+            listBoxLevels.SelectedIndex = 0;
+
         }
 
         private void FormParking_Load(object sender, EventArgs e)
@@ -45,7 +48,8 @@ namespace lab01
                 Graphics gr = Graphics.FromImage(bmp);
                 parking[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking.Image = bmp;
-            }
+            }
+
         }
 
         private void TakeCar_Button_Click(object sender, EventArgs e)
@@ -133,7 +137,8 @@ namespace lab01
                     }
                     Draw();
                 }
-            }
+            }
+
         }
 
         private void CreateGruz_Button_Click(object sender, EventArgs e)

@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -43,7 +44,8 @@ namespace lab01
                 }
             }
             return -1;
-        }
+        }
+
         /// <summary>
         /// Перегрузка оператора вычитания
         /// Логика действия: с парковки забираем автомобиль
