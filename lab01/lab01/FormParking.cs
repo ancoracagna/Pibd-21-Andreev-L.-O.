@@ -22,10 +22,6 @@ namespace lab01
             Draw();
         }
 
-        private void FormParking_Load(object sender, EventArgs e)
-        {
-
-        }
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
