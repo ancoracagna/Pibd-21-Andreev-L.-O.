@@ -14,6 +14,9 @@ namespace lab01
     {
         MultiLevelParking parking;
 
+        FormCarConfig form;
+
+
         private const int countLevel = 5;
 
         private GruzCar samosval;
@@ -70,7 +73,31 @@ namespace lab01
                 }
             }
         }
-
+        private void buttonSetCar_Click(object sender, EventArgs e)
+        {
+            form = new FormCarConfig();
+            form.AddEvent(AddCar);
+            form.Show();
+        }
+        /// <summary>
+        /// Метод добавления машины
+        /// </summary>
+        /// <param name="car"></param>
+        private void AddCar(ITransport car)
+        {
+            if (car != null && listBoxLevels.SelectedIndex > -1)
+            {
+                int place = parking[listBoxLevels.SelectedIndex] + car;
+                if (place > -1)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Машину не удалось поставить");
+                }
+            }
+        }
         private void CreateSamosval_Button_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)

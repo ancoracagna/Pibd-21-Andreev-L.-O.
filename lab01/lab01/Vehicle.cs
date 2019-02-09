@@ -18,6 +18,12 @@ namespace lab01
         public Color MainColor { protected set; get; }
         public abstract void DrawCar(Graphics g);
         public abstract void MoveTransport(Direction direction);
+
+        public void SetMainColor(Color color)
+        {
+            MainColor = color;
+        }
+
         public void SetPosition(int x, int y, int width, int height)
         {
             _startPosX = x;
