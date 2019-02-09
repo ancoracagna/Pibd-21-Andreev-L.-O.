@@ -9,7 +9,6 @@ namespace lab01
 {
     class Parking<T> where T : class, ITransport
     {
-        //  public T[] _places;
         private Dictionary<int, T> _places;
         private int _maxCount;
 
@@ -45,13 +44,7 @@ namespace lab01
             }
             return -1;
         }
-        /// <summary>
-        /// Перегрузка оператора вычитания
-        /// Логика действия: с парковки забираем автомобиль
-        /// </summary>
-        /// <param name="p">Парковка</param>
-        /// <param name="index">Индекс места, с которого пытаемся извлечь объект</param>
-        /// <returns></returns>
+        
         public static T operator -(Parking<T> p, int index)
         {
             if (!p.CheckFreePlace(index))
