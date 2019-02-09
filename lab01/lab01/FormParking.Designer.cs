@@ -30,13 +30,14 @@
         {
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CreateSamosval_Button = new System.Windows.Forms.Button();
-            this.CreateGruz_Button = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TakeCar_Button = new System.Windows.Forms.Button();
-            this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
+            this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
+            this.TakeCar_Button = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CreateGruz_Button = new System.Windows.Forms.Button();
+            this.CreateSamosval_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).BeginInit();
@@ -52,6 +53,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.listBoxLevels);
             this.groupBox1.Controls.Add(this.maskedTextBox);
             this.groupBox1.Controls.Add(this.pictureBoxTakeCar);
             this.groupBox1.Controls.Add(this.TakeCar_Button);
@@ -66,43 +68,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // CreateSamosval_Button
+            // listBoxLevels
             // 
-            this.CreateSamosval_Button.Location = new System.Drawing.Point(20, 21);
-            this.CreateSamosval_Button.Name = "CreateSamosval_Button";
-            this.CreateSamosval_Button.Size = new System.Drawing.Size(194, 49);
-            this.CreateSamosval_Button.TabIndex = 0;
-            this.CreateSamosval_Button.Text = "Припарковать самосвал";
-            this.CreateSamosval_Button.UseVisualStyleBackColor = true;
-            this.CreateSamosval_Button.Click += new System.EventHandler(this.CreateSamosval_Button_Click);
+            this.listBoxLevels.FormattingEnabled = true;
+            this.listBoxLevels.ItemHeight = 16;
+            this.listBoxLevels.Location = new System.Drawing.Point(23, 32);
+            this.listBoxLevels.Name = "listBoxLevels";
+            this.listBoxLevels.Size = new System.Drawing.Size(194, 116);
+            this.listBoxLevels.TabIndex = 7;
+            this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
             // 
-            // CreateGruz_Button
+            // maskedTextBox
             // 
-            this.CreateGruz_Button.Location = new System.Drawing.Point(20, 76);
-            this.CreateGruz_Button.Name = "CreateGruz_Button";
-            this.CreateGruz_Button.Size = new System.Drawing.Size(194, 49);
-            this.CreateGruz_Button.TabIndex = 1;
-            this.CreateGruz_Button.Text = "Припарковать грузовик";
-            this.CreateGruz_Button.UseVisualStyleBackColor = true;
-            this.CreateGruz_Button.Click += new System.EventHandler(this.CreateGruz_Button_Click);
+            this.maskedTextBox.Location = new System.Drawing.Point(100, 331);
+            this.maskedTextBox.Name = "maskedTextBox";
+            this.maskedTextBox.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBox.TabIndex = 6;
             // 
-            // label1
+            // pictureBoxTakeCar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 278);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Забрать машину";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 331);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Место:";
+            this.pictureBoxTakeCar.Location = new System.Drawing.Point(6, 436);
+            this.pictureBoxTakeCar.Name = "pictureBoxTakeCar";
+            this.pictureBoxTakeCar.Size = new System.Drawing.Size(224, 120);
+            this.pictureBoxTakeCar.TabIndex = 5;
+            this.pictureBoxTakeCar.TabStop = false;
             // 
             // TakeCar_Button
             // 
@@ -114,20 +103,43 @@
             this.TakeCar_Button.UseVisualStyleBackColor = true;
             this.TakeCar_Button.Click += new System.EventHandler(this.TakeCar_Button_Click);
             // 
-            // pictureBoxTakeCar
+            // label2
             // 
-            this.pictureBoxTakeCar.Location = new System.Drawing.Point(6, 436);
-            this.pictureBoxTakeCar.Name = "pictureBoxTakeCar";
-            this.pictureBoxTakeCar.Size = new System.Drawing.Size(224, 120);
-            this.pictureBoxTakeCar.TabIndex = 5;
-            this.pictureBoxTakeCar.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 331);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Место:";
             // 
-            // maskedTextBox
+            // label1
             // 
-            this.maskedTextBox.Location = new System.Drawing.Point(100, 331);
-            this.maskedTextBox.Name = "maskedTextBox";
-            this.maskedTextBox.Size = new System.Drawing.Size(100, 22);
-            this.maskedTextBox.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(67, 278);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Забрать машину";
+            // 
+            // CreateGruz_Button
+            // 
+            this.CreateGruz_Button.Location = new System.Drawing.Point(23, 226);
+            this.CreateGruz_Button.Name = "CreateGruz_Button";
+            this.CreateGruz_Button.Size = new System.Drawing.Size(194, 49);
+            this.CreateGruz_Button.TabIndex = 1;
+            this.CreateGruz_Button.Text = "Припарковать грузовик";
+            this.CreateGruz_Button.UseVisualStyleBackColor = true;
+            this.CreateGruz_Button.Click += new System.EventHandler(this.CreateGruz_Button_Click);
+            // 
+            // CreateSamosval_Button
+            // 
+            this.CreateSamosval_Button.Location = new System.Drawing.Point(23, 171);
+            this.CreateSamosval_Button.Name = "CreateSamosval_Button";
+            this.CreateSamosval_Button.Size = new System.Drawing.Size(194, 49);
+            this.CreateSamosval_Button.TabIndex = 0;
+            this.CreateSamosval_Button.Text = "Припарковать самосвал";
+            this.CreateSamosval_Button.UseVisualStyleBackColor = true;
+            this.CreateSamosval_Button.Click += new System.EventHandler(this.CreateSamosval_Button_Click);
             // 
             // FormParking
             // 
@@ -158,5 +170,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button CreateGruz_Button;
         private System.Windows.Forms.Button CreateSamosval_Button;
+        private System.Windows.Forms.ListBox listBoxLevels;
     }
 }
