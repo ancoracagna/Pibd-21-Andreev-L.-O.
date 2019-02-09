@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace lab01
 {
-    public class GruzCar : SamosvalCar
+    public class GruzCar : SamosvalCar, IComparable<GruzCar>, IEquatable<GruzCar>
     {
         public Color DopColor { private set; get; }
         public bool Toner { private set; get; }
@@ -71,8 +71,80 @@ namespace lab01
         }
         public override string ToString()
         {
-            return base.ToString() + ";" + DopColor.Name + ";" + FrontSpoiler + ";" +
-           SideSpoiler + ";" + BackSpoiler + ";" + CountLines;
-        }
+            return base.ToString() + ";" + DopColor.Name + ";" + Toner + ";" +
+           Line + ";" + Kuzovsize;
+        }        public int CompareTo(GruzCar other)
+        {
+            var res = (this is SamosvalCar).CompareTo(other is SamosvalCar);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+            if (Toner != other.Toner)
+            {
+                return Toner.CompareTo(other.Toner);
+            }
+            if (Line != other.Line)
+            {
+                return Line.CompareTo(other.Line);
+            }
+            if (Kuzovsize != other.Kuzovsize)
+            {
+                return Kuzovsize.CompareTo(other.Kuzovsize);
+            }
+            return 0;
+        }        public bool Equals(GruzCar other)
+        {
+            var res = (this as SamosvalCar).Equals(other as SamosvalCar);
+            if (!res)
+            {
+                return res;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (Toner != other.Toner)
+            {
+                return false;
+            }
+            if (Line != other.Line)
+            {
+                return false;
+            }
+            if (Kuzovsize != other.Kuzovsize)
+            {
+                return false;
+            }
+            return true;
+        }
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            GruzCar carObj = obj as GruzCar;
+            if (carObj == null)
+            {
+                return false;
+            }
+            else
+            {
+            return Equals(carObj);
+            }
+        }        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
     }
 }
