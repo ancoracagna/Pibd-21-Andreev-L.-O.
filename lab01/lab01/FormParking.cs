@@ -30,10 +30,6 @@ namespace lab01
 
         }
 
-        private void FormParking_Load(object sender, EventArgs e)
-        {
-
-        }
         private void Draw()
         {
             if (listBoxLevels.SelectedIndex > -1)
