@@ -9,7 +9,6 @@ namespace lab01
 {
     class Parking<T> where T : class, ITransport
     {
-        //  public T[] _places;
         private Dictionary<int, T> _places;
         private int _maxCount;
 
