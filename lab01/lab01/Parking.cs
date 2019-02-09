@@ -37,14 +37,20 @@ namespace lab01
                 {
                     p._places.Add(i, car);
                     p._places[i].SetPosition(5 + i / 5 * p._placeSizeWidth + 5,
-                     i % 5 * p._placeSizeHeight + 15, p.PictureWidth,
-                    p.PictureHeight);
+                    i % 5 * p._placeSizeHeight + 15, p.PictureWidth, p.PictureHeight);
                     return i;
                 }
             }
             return -1;
         }
-        
+
+        /// <summary>
+        /// Перегрузка оператора вычитания
+        /// Логика действия: с парковки забираем автомобиль
+        /// </summary>
+        /// <param name="p">Парковка</param>
+        /// <param name="index">Индекс места, с которого пытаемся извлечь объект</param>
+        /// <returns></returns>
         public static T operator -(Parking<T> p, int index)
         {
             if (!p.CheckFreePlace(index))
@@ -82,6 +88,26 @@ namespace lab01
                     i * _placeSizeWidth + 110, j * _placeSizeHeight);
                 }
                 g.DrawLine(pen, i * _placeSizeWidth, 0, i * _placeSizeWidth, 400);
+            }
+        }
+        public T this[int ind]
+        {
+            get
+            {
+                if (_places.ContainsKey(ind))
+                {
+                    return _places[ind];
+                }
+                return null;
+            }
+            set
+            {
+                if (CheckFreePlace(ind))
+                {
+                    _places.Add(ind, value);
+                    _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5 *
+                   _placeSizeHeight + 15, PictureWidth, PictureHeight);
+                }
             }
         }
     }
