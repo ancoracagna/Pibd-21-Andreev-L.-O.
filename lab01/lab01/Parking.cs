@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace lab01
 {
-    class Parking<T> : IEnumerator<T>, IEnumerable<T>, IComparable<Parking<T>> where T : class, ITransport
+    class Parking<T> : IEnumerator<T>, IEnumerable<T>, IComparable<Parking<T>> where T : class, ITransport
+
     {
         //  public T[] _places;
         private Dictionary<int, T> _places;
@@ -20,7 +21,8 @@ namespace lab01
             {
                 return _places.Keys.ToList()[_currentIndex];
             }
-        }
+        }
+
         // сравнимать 2 объекта массива по размерам
         private int PictureWidth { get; set; }
         private int PictureHeight { get; set; }
@@ -51,7 +53,8 @@ namespace lab01
                 }
             }
             return -1;
-        }
+        }
+
         /// <summary>
         /// Перегрузка оператора вычитания
         /// Логика действия: с парковки забираем автомобиль
@@ -153,13 +156,16 @@ namespace lab01
         public void Reset()
         {
             _currentIndex = -1;
-        }        public IEnumerator<T> GetEnumerator()
+        }
+        public IEnumerator<T> GetEnumerator()
         {
             return this;
-        }        IEnumerator IEnumerable.GetEnumerator()
+        }
+        IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
-        }        public int CompareTo(Parking<T> other)
+        }
+        public int CompareTo(Parking<T> other)
         {
             if (_places.Count > other._places.Count)
             {
@@ -199,7 +205,9 @@ namespace lab01
                 }
             }
             return 0;
-        }
+        }
+
+
 
     }
 }
